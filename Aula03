@@ -1,0 +1,122 @@
+#include <iostream>
+#include <string>
+
+#define MAXIMO_POSTAGENS 2
+
+using namespace std;
+
+//Define a classe
+class Perfil {
+public:
+	string nome;
+	Perfil* contato = NULL;
+	string postagens[MAXIMO_POSTAGENS];
+	int quantidadeDePostagens = 0;
+
+	bool adicionarContato(Perfil* contato);
+	bool adicionarPostagem(string texto);
+	void imprimir();
+};
+
+bool Perfil::adicionarContato(Perfil* contato){ 
+	if (this -> contato != NULL){
+		return false;
+	}
+	else
+		this -> contato = contato;
+		return true;
+
+}
+
+bool Perfil::adicionarPostagem(string texto){
+	if (quantidadeDePostagens < MAXIMO_POSTAGENS){
+		
+		postagens[quantidadeDePostagens] = texto;
+		quantidadeDePostagens += 1;
+		return true;
+	}
+	else 
+		return false;
+
+}
+
+
+
+// METODOS JA IMPLEMENTADOS
+void Perfil::imprimir() {
+	cout << endl << "Nome: " << nome << endl;
+	cout << "Numero de postagens feitas: " << quantidadeDePostagens << endl;
+	for (int i = 0; i < quantidadeDePostagens; i++)
+		cout << "Postagens " << i + 1 << " - Texto: " << postagens[i] << endl;
+
+	if (contato != NULL){
+		cout << "Contato " << contato->nome << endl;
+		for(int i = 0; i < contato->quantidadeDePostagens; i++)
+			cout << "Postagens " << i + 1 << " do contato - Texto: " << contato->postagens[i] << endl;
+	}
+	else
+		cout << "Sem contato " << endl;
+}
+
+void imprimirRede (Perfil* p1, Perfil* p2) {
+	cout << "==================================" << endl;
+	p1->imprimir();
+	p2->imprimir();
+}
+
+
+
+void teste (){
+	//1
+	
+	cout << endl << " ===== Cria perfil de Antonio" << endl;
+	Perfil *Antonio = new Perfil; 
+	Antonio -> nome = "Antonio";
+
+	//2
+	cout << " ===== Cria perfil da Maria" << endl;
+	Perfil *Maria = new Perfil; 
+	Maria -> nome = "Maria";
+	
+	//3
+	cout << " ===== Maria se torna contato de Antonio"<< endl;
+	Antonio -> adicionarContato(Maria);
+	
+	//4
+	cout << " ===== Maria publica Msg 1"<< endl;
+	Maria -> adicionarPostagem("Msg 1");
+
+
+	//5
+	imprimirRede (Antonio, Maria);
+
+
+	//6
+	cout << " ===== Antonio publica Msg 2"<< endl;
+	Antonio -> adicionarPostagem("Msg 2");
+
+	//7
+	imprimirRede (Antonio, Maria);
+
+	//8
+	cout << " ===== Antonio se torna contato de Maria"<< endl;
+	Maria -> adicionarContato(Antonio);
+
+	//9
+	cout << " ===== Maria publica Msg 3"<< endl;
+	Maria -> adicionarPostagem("Msg 3");
+	imprimirRede (Antonio, Maria);
+
+	Maria -> adicionarPostagem("Msg 4");
+
+	
+	imprimirRede (Antonio, Maria);
+}
+
+/*COMENTE O MAIN AO SUBMETER
+
+int main() {
+	teste();
+	return 0;
+}
+//*/
