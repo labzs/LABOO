@@ -1,0 +1,69 @@
+# 🧠 C++: Ponteiros e Memória
+
+Este guia serve como consulta rápida para entender como o C++ lida com endereços de memória e variáveis.
+
+## 1. Conceitos Fundamentais
+
+* **Variável:** Um nome para um valor guardado na memória.
+* **Endereço (`&`):** A "localização" (ou gaveta) exata na memória RAM (ex: `0x000084`).
+* **Ponteiro (`*`):** Uma variável especial que armazena um **endereço**.
+
+---
+
+## 2. Operadores Mágicos
+
+| Operador | Nome | O que ele diz ao computador? |
+| --- | --- | --- |
+| `&` | **Referência** | "Não me dê o valor, me dê o **endereço** de onde ele mora." |
+| `*` | **Desreferência** | "Vá até o endereço guardado neste ponteiro e pegue o **valor** lá dentro." |
+
+---
+
+## 3. Exemplo Prático (O Mapa da Memória)
+
+Considere o seguinte código:
+
+```cpp
+int i = 5;      // Variável comum
+int *p = &i;    // p recebe o endereço de i
+
+```
+
+### O que cada expressão retorna?
+
+Se o endereço de `i` for `0x84` e o endereço do próprio ponteiro `p` for `0x8C`:
+
+* **`i`** ➔ `5` (O valor da variável).
+* **`&i`** ➔ `0x84` (Onde `i` está morando).
+* **`p`** ➔ `0x84` (O valor dentro de `p` é o endereço de `i`).
+* **`*p`** ➔ `5` (Entra no endereço `0x84` e lê o que tem lá).
+* **`&p`** ➔ `0x8C` (O endereço do próprio ponteiro na memória).
+
+---
+
+## 4. Analogia do GPS
+
+* **Variável (`i`):** Uma casa física.
+* **Valor (`5`):** Quem mora dentro da casa.
+* **Ponteiro (`p`):** Um papel com o endereço da casa anotado.
+* **Desreferenciar (`*p`):** Ir até o endereço escrito no papel e bater na porta para ver quem está lá.
+
+---
+
+## 5. Dicas de Ouro
+
+1. Sempre inicialize ponteiros. Se não tiver um endereço ainda, use `nullptr`:
+`int *p = nullptr;`
+2. O tipo do ponteiro deve ser o mesmo da variável:
+`double d = 10.5; double *ptr = &d;`
+
+---
+
+### Como usar isso no GitHub?
+
+1. Vá no seu repositório.
+2. Clique em **Add file** > **Create new file**.
+3. Nomeie como `README.md` ou `ponteiros.md`.
+4. Cole o texto acima e salve!
+
+**Gostaria que eu explicasse como usar ponteiros dentro de funções (passagem por referência)? Isso costuma ser o próximo passo onde a galera trava!**
