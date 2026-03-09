@@ -66,4 +66,3 @@ Se o endereço de `i` for `0x84` e o endereço do próprio ponteiro `p` for `0x8
 3. Nomeie como `README.md` ou `ponteiros.md`.
 4. Cole o texto acima e salve!
 
-**Gostaria que eu explicasse como usar ponteiros dentro de funções (passagem por referência)? Isso costuma ser o próximo passo onde a galera trava!**
