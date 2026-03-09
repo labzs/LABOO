@@ -19,17 +19,16 @@ string* encontrarMusica(int duracoes[], string estilos[], string nomes[],
 //(int* maximo: ponteiro)
 
 int calcularEstatisticas(int duracoes[], int quantidade, int& minimo, int* maximo) {
-    minimo = 100000;
-    *maximo = 0; //garante que se o vetor estiver vazio, retornar valor minimo e maximo 0
-    int soma = 0;
     if (quantidade == 0){
             minimo = 0;
             *maximo = 0;
-            soma = 0;
-            return soma;
+            return 0;
     }  
+    minimo = duracoes[0];
+    *maximo = duracoes[0]; //garante que se o vetor estiver vazio, retornar valor minimo e maximo 0
+    int soma = duracoes[0];
 
-    for (int i = 0; i < quantidade; i++) {
+    for (int i = 1; i < quantidade; i++) {
 
         if (duracoes[i] < minimo) {
             minimo = duracoes[i];
