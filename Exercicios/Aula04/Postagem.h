@@ -7,10 +7,12 @@
 using namespace std;
 
 class Postagem {
-public: 
+private: 
   string legenda;  //ATRIBUTO
   int visualizacoes = 0;
-
+public:
+  string getLegenda();
+  void setLegenda(string leg);
   void assistir ();    //MÉTODOS
   void imprimir ();
 };
