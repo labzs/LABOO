@@ -1,3 +1,9 @@
+#ifndef PERFIL_H
+#define PERFIL_H
+#include <iostream>
+#include <string>
+#include "Postagem.h"
+using namespace std;
 
 class Perfil {
 public:
@@ -8,4 +14,7 @@ public:
 
   int getTotalDeVisualizacoes();
   bool postar(Postagem* p);
+  void imprimir();
 };
+
+#endif

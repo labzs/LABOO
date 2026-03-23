@@ -1,6 +1,6 @@
-#include "Posstagem.h"
-#include <iostream>
+#include "Postagem.h"
 
+using namespace std;
 void Postagem::assistir() {
     visualizacoes++; // Incrementa o valor atual em 1
 }
