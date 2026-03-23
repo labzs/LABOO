@@ -1,3 +1,5 @@
+#include "Perfil.h"
+#include <iostream>
 
 int Perfil::getTotalDeVisualizacoes() {
     int total = 0;
