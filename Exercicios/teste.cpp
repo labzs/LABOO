@@ -1,30 +1,35 @@
 
 void teste() {
-    // Criando postagens
-    Postagem post1;
-    post1.legenda = "Intro Faroeste Caboclo";
-    post1.assistir(); // 1 view
+    Postagem* p1 = new Postagem();
+    p1->legenda = "tocando Raul Seixas";
+    p1->visualizacoes = 0; 
 
-    Postagem post2;
-    post2.legenda = "Top 10 musicas do Legiao";
-    post2.assistir();
-    post2.assistir(); // 2 views
+    // b. Chame o método assistir de "tocando Raul Seixas" 4 vezes
+    for(int i = 0; i < 4; i++) {
+        p1->assistir(); 
+    }
+    // Se você tivesse o objeto na mão, usaria p1.legenda.
+   // Como você tem apenas o endereço (ponteiro), você usa a seta.
 
-    // Criando perfil
-    Perfil meuPerfil;
-    meuPerfil.nome = "Usuario USP";
+    // c. Crie uma postagem de legenda "Faroeste Caboclo"
+    Postagem* p2 = new Postagem();
+    p2->legenda = "Faroeste Caboclo";
+    p2->visualizacoes = 0;
 
-    // Testando postagens
-    if (meuPerfil.postar(&post1)) cout << "Post 1 publicado!" << endl;
-    if (meuPerfil.postar(&post2)) cout << "Post 2 publicado!" << endl;
+    // d. Chame o método assistir de "Faroeste Caboclo" 2 vezes
+    p2->assistir();
+    p2->assistir();
+
+    // e. Crie um perfil chamado "cifra club" e adicione as postagens
+    Perfil* cifraClub = new Perfil();
+    cifraClub->nome = "cifra club";
     
-    // Tentando postar a mesma novamente (deve falhar)
-    if (!meuPerfil.postar(&post1)) cout << "Erro: Postagem repetida ou Perfil cheio." << endl;
+    // Adicionando na ordem pedida
+    cifraClub->postar(p1);
+    cifraClub->postar(p2);
 
-    // Resultados
-    post1.imprimir();
-    post2.imprimir();
-    cout << "Total de Views no Perfil: " << meuPerfil.getTotalDeVisualizacoes() << endl;
+    // f. Por fim, imprima o objeto “cifra club”
+    cifraClub->imprimir();
 }
 
 int main() {
