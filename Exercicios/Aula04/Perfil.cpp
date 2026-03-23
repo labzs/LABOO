@@ -13,7 +13,7 @@ int Perfil::getTotalDeVisualizacoes() {
 
 bool Perfil::postar(Postagem* p) {
     // 1. Verificar se a postagem já existe no perfil (prevenção de duplicados)
-    for(int i = 0; i < MAXIMO_POSTAGENS; i++) {
+    for(int i = 0; i < quantidade; i++) {
         if(postagens[i] == p) {
             return false;
         }
