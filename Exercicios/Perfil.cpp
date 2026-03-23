@@ -1,4 +1,5 @@
 #include "Perfil.h"
+#include "Postagem.h"
 #include <iostream>
 
 int Perfil::getTotalDeVisualizacoes() {
@@ -29,3 +30,18 @@ bool Perfil::postar(Postagem* p) {
     // 3. Se quantidade >= 2, não há mais espaço
     return false;
 }
+
+Perfil: <nome> - <quantidade> postagens - <totalVisualizacoes>
+visualizacoes totais 
+
+void Perfil::imprimir() {
+    cout << "Perfil:" << nome << "-" << quantidade << "postagens" << getTotalDeVisualizacoes() << "Visualizações totais" << endl;
+    if (quantidadePostagens > 0) {
+            cout << endl;
+            for (int i = 0; i < quantidade; i++) {
+                postagens[i]->imprimir(); 
+            }
+    }
+};
+
+
