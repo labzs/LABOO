@@ -54,7 +54,7 @@ perfil1->postar(postagem1);
 perfil1->postar(postagem2);
 perfil1->postar(postagem3);
 
-cout << "==========TESTA PRINT PERFIL==========" << endl;
+
 // IMPRIME PERFIL
 perfil1 -> imprimir();
 
@@ -63,12 +63,7 @@ perfil1 -> imprimir();
 NÃO USE O DESTRUTOR ASSIM: porque ele aapenas destroi a postagem, sem liberar o espaço na memória
 postagem->~Postagem();
 */
-cout << "==========APAGANDO POSTAGENS==========" << endl;
-//Destruindo Postagem
-delete postagem1;
-delete postagem2;
 
-cout << "==========TESTA PRINT PERFIL APÓS EXCLUIR 2 POSTAGENS ==========" << endl;
 // IMPRIME PERFIL
 perfil1 -> imprimir();
 
