@@ -1,16 +1,28 @@
 #include "Perfil.h"
 #include "Postagem.h"
 
+/*Accessors (ou getters): para recuperar o valor
+ -Prefixo get
+ -Não precisa de argumentos
+ -Em geral retorna o mesmo tipo do atributo
+• Mutators (ou setters): para alterar o valor
+ -Prefixo set
+ -Não precisa retornar um valor
+ -O parâmetro é o valor a ser colocado no atributo*/
 
 int Perfil::getTotalDeVisualizacoes() {
     int total = 0;
-    for(int i = 0; i < MAXIMO_POSTAGENS; i++) {
-        if (postagens[i] != NULL) total += postagens[i]->visualizacoes;
+    
+    // Ele vai de postagem em postagem perguntando: "Quantas views você tem?"
+    for(int i = 0; i < quantidade; i++) {
+        if (postagens[i] != nullptr) {
+            // O Perfil lê o resultado do controle feito pelo método assistir()
+            total += postagens[i]->getVisualizacoes(); 
+        }
     }
-   
+    
     return total;
 }
-
 bool Perfil::postar(Postagem* p) {
     // 1. Verificar se a postagem já existe no perfil (prevenção de duplicados)
     for(int i = 0; i < quantidade; i++) {
@@ -49,13 +61,14 @@ void Perfil::imprimir() {
     return nome;
 
   }
-  void Perfil::setNome(string n){
-    this -> nome = n;
+  void Perfil::setNome(string nome){
+    //this aponta pro atributo, que recepe o parâmetro
+    this -> nome = nome;
 
   }
   int Perfil:: getQuantidade(){
-
+    return quantidade;
   }
-  int Perfil:: getPostagens(){
-
+  Postagem** Perfil:: getPostagens(){
+    return postagens;
   }

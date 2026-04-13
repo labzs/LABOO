@@ -13,6 +13,7 @@ private:
 public:
   string getLegenda();
   void setLegenda(string leg);
+  int getVisualizacoes();
   void assistir ();    //MÉTODOS
   void imprimir ();
 };

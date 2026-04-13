@@ -21,7 +21,7 @@ public:
   string getNome();
   void setNome(string n);
   int getQuantidade();
-  int getPostagens();
+  Postagem** getPostagens();
 };
 
 #endif

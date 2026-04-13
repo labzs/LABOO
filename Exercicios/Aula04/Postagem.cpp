@@ -15,3 +15,8 @@ string Postagem::getLegenda(){
 void Postagem::setLegenda(string leg){
     this-> legenda = leg;
 }
+
+int Postagem::getVisualizacoes() {
+    return visualizacoes;
+}
+
