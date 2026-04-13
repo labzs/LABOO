@@ -9,3 +9,7 @@ Quando faz passagem por referencia, altera a variavel e não só a copia.
 
 Compilação 
 g++ *.cpp -o ex1
+
+Para rodar
+• Escreva no terminal:
+ ./ex1
