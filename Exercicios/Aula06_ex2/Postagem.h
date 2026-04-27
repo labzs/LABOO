@@ -19,7 +19,7 @@ public:
   void imprimirVideo ();
 // Construtor
  Postagem(string legenda);
- ~Postagem();
+ virtual ~Postagem();
   
 };
 
@@ -42,8 +42,8 @@ public:
 class Lista : public Postagem {
 protected:
     Video** videos;      // Vetor de ponteiros para Video
-    int tamanho;         // Capacidade máxima
-    int quantidade;      // Quantidade atual
+    int maximoVideo;         // Capacidade máxima de Videos 
+    int quantidadeVideos;      // Quantidade atual de Videos
 
 public:
     Lista(string legenda, int tamanho);
