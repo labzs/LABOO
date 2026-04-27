@@ -11,6 +11,7 @@ Postagem::Postagem(string legenda) {
 Postagem::~Postagem() {
  cout << "Destrutor de postagem com " << getVisualizacoes() << " visualizacoes: "
  << getLegenda() << endl;
+ cout << endl;
 }
 
 void Postagem::assistir() {
@@ -48,8 +49,8 @@ Video::Video(string legenda, int duracao) : Postagem(legenda) {
 
 // c. Destrutor de Video
 Video::~Video() {
-    cout << "Destrutor de video com " << visualizacoes << " visualizacoes: "
-         << legenda << endl;
+    cout << "Destrutor de video com " << visualizacoes << " visualizacoes: "<< legenda << endl;
+    cout << endl;
 }
 
 int Video::getDuracao() {
@@ -81,8 +82,7 @@ Lista::Lista(string legenda, int tamanho) : Postagem(legenda) {
 // 2. Destrutor
 Lista::~Lista() {
     cout << "Lista com " << quantidadeVideos << " videos destruida" << endl;
-    
-    // Conforme o item (e): Não deleta os vídeos, apenas o vetor que os guardava.
+    cout << endl;
     delete[] videos; 
 }
 
@@ -107,11 +107,11 @@ bool Lista::adicionar(Video* v) {
 
     // Adiciona o ponteiro e incrementa a quantidade
     videos[quantidadeVideos] = v;
-    quantidade++;
+    quantidadeVideos++;
     return true;
 }
 
-// c. Método Imprimir (conforme modelo fornecido)
+// c. Método Imprimir
 void Lista::imprimir() {
     cout << "Lista com " << quantidadeVideos << " videos: " << getLegenda() << endl;
     for (int i = 0; i < quantidadeVideos; i++) {

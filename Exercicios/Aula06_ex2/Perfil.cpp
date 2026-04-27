@@ -23,12 +23,13 @@ Perfil::Perfil(std::string nome, int maximo) {
 // Implementação do Destrutor
 Perfil::~Perfil() {
   cout << "Destrutor de perfil: " << getNome() << " - " << getQuantidade()  << " postagens" << endl;
- // COMPLETE
+ 
  for (int i = 0; i <quantidade; i++) {
      delete postagens[i];
  }
 delete[] postagens;
  cout << "Perfil destruido:" << getNome() << endl;
+ cout << endl;
 }
 
 int Perfil::getTotalDeVisualizacoes() {
