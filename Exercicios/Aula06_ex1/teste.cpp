@@ -5,69 +5,44 @@
 
 using namespace std;
 
+
 void teste() {
-//  Perfil* meuPerfil = new Perfil("João", 20); // Nome e capacidade máxima
 
-/*
-a. Crie um Perfil de nome "Minhas aves favoritas" e maximoDePostagens 5;
-b. Crie três Postagens: "Pombos", "Papagaios" e "Pavoes". Altere, por meio do uso
-repetido do método assistir, as quantidades de visualizações das Postagens para
-2, 3 e 4, respectivamente;
-c. Poste as três postagens em "Minhas aves favoritas" na ordem em que foram
-criadas;
-d. Imprima o Perfil.
-*/
-const int vp1 = 2;
-const int vp2 = 3;
-const int vp3 = 4;
+    // a. Crie um objeto Postagem com a legenda "instalacao antivirus"
+    //Postagem usando construtor
+    Postagem* postagem1 = new Postagem("instalacao antivirus");
 
-//CRIA PERFIL USANDO CONSTRUTOR
-Perfil* perfil1 = new Perfil("Minhas aves favoritas", 5);
+    // b. Crie um objeto Video com a legenda "como instalar um antivirus" e duracao 120
+    Video* video1 = new Video("como instalar um antivirus", 120);
 
-//CRIA POSTAGEM USANDO CONSTRUTOR
-Postagem* postagem1 = new Postagem("Pombos");
-Postagem* postagem2 = new Postagem("Papagaios");
-Postagem* postagem3 = new Postagem("Pavoes");
+    // c. Crie um objeto Video com a legenda "tutorial remover virus" e duracao 300
+    Video* video2 = new Video("tutorial remover virus", 300);
 
-//VISUALIZA POSTAGENS USANDO MÉTODO ASSISTIR
-  for(int i = 0; i < vp1; i++) {
-        postagem1->assistir(); 
+    // d. Utilize 3 vezes o método assistir do Video "tutorial remover virus", com argumento 170
+    // Nota: 170/300 = 56.6%, logo cada chamada deve incrementar as visualizações.
+    for (int i = 0; i < 3; i++) {
+        video2->assistir(170);
     }
 
-  for(int i = 0; i < vp2; i++) {
-        postagem2->assistir(); 
-    }
-  for(int i = 0; i < vp3; i++) {
-        postagem3->assistir(); 
-    }
+    // e. Poste todos os objetos criados em um novo Perfil, de nome "tutoriais epicos" e maximo 10
+   
+    Perfil* perfil = new Perfil("tutoriais epicos", 10);
+    perfil->postar(postagem1);
+    perfil->postar(video1);
+    perfil->postar(video2);
 
-    /*
-cout << "==========TESTA PRINT POSTAGENS ==========" << endl;
-// IMPRIME AS POSTAGENS 
-postagem1 ->imprimir();
-postagem2 ->imprimir();
-postagem3 ->imprimir();
-*/
+    // f. Imprima “tutoriais epicos” e a duração de "tutorial remover virus", pulando uma linha
+  perfil -> imprimir();
+  cout << "Duracao: " << video2 -> getDuracao() << endl;
+  cout << endl;
+  
+ 
 
-// POSTA POSTAGENS NO PERFIL
-perfil1->postar(postagem1);
-perfil1->postar(postagem2);
-perfil1->postar(postagem3);
+    // g. Destrua o perfil
+    delete perfil;
+};
 
 
-// IMPRIME PERFIL
-perfil1 -> imprimir();
 
 
-/*
-NÃO USE O DESTRUTOR ASSIM: porque ele aapenas destroi a postagem, sem liberar o espaço na memória
-postagem->~Postagem();
-*/
-
-// IMPRIME PERFIL
-perfil1 -> imprimir();
-
-delete perfil1;
-
-}
 

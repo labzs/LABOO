@@ -42,7 +42,7 @@ int Postagem::getVisualizacoes() {
 // a. Construtor chamando o construtor da base (Postagem)
 Video::Video(string legenda, int duracao) : Postagem(legenda) {
     this->duracao = duracao;
-   // this->legenda = legenda;
+    this->legenda = legenda;
 }
 //Destrutor da superclasse é chamado automaticamente ao destruir o objeto da subclass
 

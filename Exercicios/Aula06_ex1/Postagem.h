@@ -16,6 +16,7 @@ public:
   int getVisualizacoes();
   void assistir ();    //MÉTODOS
   void imprimir ();
+  void imprimirVideo ();
 // Construtor
  Postagem(string legenda);
  ~Postagem();
@@ -28,13 +29,12 @@ public:
 
 class Video: public Postagem {
 protected:
-duracao
+int duracao = 0;
 
 //MODO DE VISIBILIDADE
-protected: 
+public: 
  Video(string legenda, int duracao);
  ~Video();
- 
  int getDuracao();
  void assistir(int tempo);
 };
