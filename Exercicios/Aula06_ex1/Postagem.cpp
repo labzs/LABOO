@@ -1,7 +1,7 @@
 #include "Postagem.h"
 using namespace std;
 
-
+//Construtor
 Postagem::Postagem(string legenda) {
     // Usamos o setter para aproveitar qualquer lógica de validação
     setLegenda(legenda);
