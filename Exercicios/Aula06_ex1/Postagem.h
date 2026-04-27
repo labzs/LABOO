@@ -7,7 +7,7 @@
 using namespace std;
 
 class Postagem {
-private: 
+protected: 
   string legenda;  //ATRIBUTO
   int visualizacoes = 0;
 public:
@@ -22,5 +22,22 @@ public:
   
 };
 
-#endif
 
+//DECLARAÇÃO DA SUBCLASSE:
+//class NomeSubClasse: public NomeSuperClasse {}
+
+class Video: public Postagem {
+protected:
+duracao
+
+//MODO DE VISIBILIDADE
+protected: 
+ Video(string legenda, int duracao);
+ ~Video();
+ 
+ int getDuracao();
+ void assistir(int tempo);
+};
+
+
+#endif
