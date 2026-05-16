@@ -1,5 +1,6 @@
 #include "Perfil.h"
 #include "Postagem.h"
+#include "Video.h"
 #include <string>
 #include <iostream>
 
@@ -41,7 +42,6 @@ void teste() {
     // g. Destrua o perfil
     delete perfil;
 };
-
 
 
 
