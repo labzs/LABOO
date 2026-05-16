@@ -28,7 +28,7 @@ public:
   // Construtor
   Perfil(string nome, int maximoDePostagens);
   //Destrutor 
-  ~Perfil(); 
+ virtual ~Perfil(); 
 };
 
 
