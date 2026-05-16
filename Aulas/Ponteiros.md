@@ -1,5 +1,6 @@
 # 🧠 C++: Ponteiros e Memória
 
+Este guia serve como consulta rápida para entender como o C++ lida com endereços de memória e variáveis.
 
 ## 1. Conceitos Fundamentais
 
@@ -64,3 +65,4 @@ Se o endereço de `i` for `0x84` e o endereço do próprio ponteiro `p` for `0x8
 2. Clique em **Add file** > **Create new file**.
 3. Nomeie como `README.md` ou `ponteiros.md`.
 4. Cole o texto acima e salve!
+
