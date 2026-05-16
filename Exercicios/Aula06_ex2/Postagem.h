@@ -16,44 +16,11 @@ public:
   int getVisualizacoes();
   void assistir ();    //MÉTODOS
   void imprimir ();
-  void imprimirVideo ();
+ 
 // Construtor
  Postagem(string legenda);
- virtual ~Postagem();
+ ~Postagem();
   
-};
-
-
-//DECLARAÇÃO DA SUBCLASSE:
-//class NomeSubClasse: public NomeSuperClasse {}
-
-class Video: public Postagem {
-protected:
-int duracao = 0;
-
-//MODO DE VISIBILIDADE
-public: 
- Video(string legenda, int duracao);
- ~Video();
- int getDuracao();
- void assistir(int tempo);
-};
-
-class Lista : public Postagem {
-protected:
-    Video** videos;      // Vetor de ponteiros para Video
-    int maximoVideo;         // Capacidade máxima de Videos 
-    int quantidadeVideos;      // Quantidade atual de Videos
-
-public:
-    Lista(string legenda, int tamanho);
-    virtual ~Lista();
-
-    bool adicionar(Video* v);
-    void imprimir();
-    
-    Video** getVideos();
-    int getQuantidade();
 };
 
 

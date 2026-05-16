@@ -1,5 +1,6 @@
 #include "Perfil.h"
 #include "Postagem.h"
+#include "Video.h"
 #include <string>
 #include <iostream>
 
@@ -18,35 +19,29 @@ void teste() {
     // c. Crie um objeto Video com a legenda "tutorial remover virus" e duracao 300
     Video* video2 = new Video("tutorial remover virus", 300);
 
-    //2.a Cria lista
-    Lista* lista1 = new Lista("videos mais vistos", 15);
-
-    //2.b Adiciona video 1 e video2 a lista1
-    lista1 -> adicionar(video1);
-    lista1 -> adicionar(video2);
-
     // d. Utilize 3 vezes o método assistir do Video "tutorial remover virus", com argumento 170
+    // Nota: 170/300 = 56.6%, logo cada chamada deve incrementar as visualizações.
     for (int i = 0; i < 3; i++) {
         video2->assistir(170);
     }
 
     // e. Poste todos os objetos criados em um novo Perfil, de nome "tutoriais epicos" e maximo 10
-    Perfil* perfil = new Perfil("tutoriais epicos", 10);
-    //2.c Posta lista1 no perfil
-    perfil->postar(lista1);
-
-    // 2.d. Imprima a Lista e o Perfil; 
-  perfil -> imprimir();
-  lista1 -> imprimir();
-  cout << endl;
    
-// 2.e. Destrua o Perfil", instalacao antivirus", "como instalar um virus" e "tutorial remover virus";
-    delete perfil;
-    delete postagem1;
-    delete video1;
-    delete video2;
-};
+    Perfil* perfil = new Perfil("tutoriais epicos", 10);
+    perfil->postar(postagem1);
+    perfil->postar(video1);
+    perfil->postar(video2);
 
+    // f. Imprima “tutoriais epicos” e a duração de "tutorial remover virus", pulando uma linha
+  perfil -> imprimir();
+  cout << "Duracao: " << video2 -> getDuracao() << endl;
+  cout << endl;
+  
+ 
+
+    // g. Destrua o perfil
+    delete perfil;
+};
 
 
 
