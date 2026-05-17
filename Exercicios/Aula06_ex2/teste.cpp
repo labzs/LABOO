@@ -26,17 +26,27 @@ void teste() {
         video2->assistir(170);
     }
 
-   
+   //Exercicio 3
+   //a. Crie uma nova Lista chamada "videos mais vistos" e de tamanho 15. 
     Lista* lista1 = new Lista("Videos mais vistos",15);
+
+  // b. Adicione "como instalar um antivirus" e "tutorial remover virus" à lista;
     lista1 ->adicionar(video1);
     lista1 ->adicionar(video2);
 
+ //c. Crie o Perfil "tutoriais epicos", com máximo de postagens 10, e poste a Lista nele
     Perfil* perfil1 = new Perfil("tutoriais epicos",10);
     perfil1->postar(lista1);
 
+ //d. Imprima a Lista e o Perfil; 
     lista1->imprimir();
     perfil1->imprimir();
-    
+
+//Destrua o Perfil", instalacao antivirus", "como instalar um virus" e "tutorial remover virus"; 
+    delete perfil1;
+    delete postagem1;
+    delete video1;
+    delete video2;
 };
 
 
