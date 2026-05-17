@@ -1,9 +1,9 @@
 #include "Video.h"
-
+#include "Conteudo.h"
 
 
 // a. Construtor chamando o construtor da base (Postagem)
-Video::Video(string legenda, int duracao) : Postagem(legenda), duracao(duracao) {
+Video::Video(string legenda, int duracao) : Conteudo(legenda), duracao(duracao) {
 }
 
 
