@@ -15,8 +15,9 @@ public:
   string getLegenda();
   void setLegenda(string leg);
   virtual int getVisualizacoes() = 0;
-  void assistir ();   
   virtual void imprimir () = 0;
+  void assistir ();   
+  
  
 // Construtor
  Postagem(string legenda);

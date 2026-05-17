@@ -12,27 +12,27 @@ using namespace std;
 void teste() {
 
 
-//a. Crie duas Imagens, de legendas “i1” e “i2”;
-    Imagem* i1 = new Imagem("i1");
-    Imagem* i2 = new Imagem("i2");
+//a. Crie uma lista com nome “Melhores Atores” e tamanho 5
+    Lista* l1 = new Lista("Melhores Atores", 5);
 
-
-//d. Adicione os objetos criados em a) e b) à Lista;
-    l1->adicionar(i1);
-    l1->adicionar(i2);
+//b. Crie duas imagens:
+    Imagem* i1 = new Imagem("Tom Cruise");  
+    Imagem* i2 = new Imagem("Brad Pitt");
 
 
 
-//e. Imprima a seguinte mensagem: “Lista com duracao de <duracao> segundos” sendo “<duracao>” o valor devolvido com pelo método getDuracao de Lista. Pule
-    cout << "Lista com " << l1->getVisualizacoesTotais() << " visualizacoes." <<endl;
-    cout<< endl;
+//c. Crie um vídeo “Entrevista Jim Carrey” com 5 de duração e 0 visualizações
+//d. Adicione todos os conteúdos na lista na ordem que foram criados.
+//e. Crie mais um vídeo:
+//i. “Momentos Will Smith” com 3 de duração e 1 visualização.
+//f. Crie um novo Perfil chamado “Atores de sucesso” com máximo 10 e poste a lista “Melhores atores” e o vídeo “Momentos Will Smith”
+//g. Imprima o perfil “Atores de Sucesso”.
+//h. Destrua o Perfil. 
 
-//f. Delete a Lista, os Videos e a Imagem. 
-    delete i1;
-    delete i2;
-    delete v1;
-    delete v2;
-    delete l1;
+
+
+
+
 
 };
 

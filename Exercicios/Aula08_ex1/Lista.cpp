@@ -129,12 +129,14 @@ int Lista::getDuracaoTotal() {
     return duracaoTotal;
 
 }
-int Lista::getVisualizacoesTotais() {
 
-    int totalVisualizacoes = 0;
-    for (int i = 0; i < quantidadeVideos; i++) {
-        int visualizacoesPi = conteudos[i]->getVisualizacoes();
-        totalVisualizacoes += visualizacoesPi;    
+int Lista::getVisualizacoes() {
+
+    int total = 0;
+
+    for(int i = 0; i < quantidadeVideos; i++) {
+        total += conteudos[i]->getVisualizacoes();
     }
-    return totalVisualizacoes;
+
+    return total;
 }

@@ -6,6 +6,8 @@ class Imagem: public Conteudo {
 public:
     Imagem(string legenda);
     virtual ~Imagem();
+    void imprimir() override;
+    
 };
 
 #endif

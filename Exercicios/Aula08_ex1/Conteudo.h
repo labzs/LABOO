@@ -5,13 +5,14 @@
 
 class Conteudo: public Postagem {
 protected:
-    int visualizacoes = 0;
+    int visualizacoes;
 public:
     Conteudo(string legenda);
     virtual ~Conteudo();
     Conteudo** conteudos;
+
     int getVisualizacoes();
-    void assistir ();    
+    virtual void assistir () = 0;    
 };
 
 #endif

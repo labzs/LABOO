@@ -16,6 +16,7 @@ public:
  virtual ~Video();
  int getDuracao();
  void assistir(int tempo);
+ void imprimir() override;
 };
 
 #endif

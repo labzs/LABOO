@@ -30,3 +30,6 @@ void Video::assistir(int tempo) {
     }
 }
 
+void Video::imprimir() {
+    cout << "Video: " << getLegenda() << " (" << duracao << " segundos, " << visualizacoes << " visualizacoes)";
+}

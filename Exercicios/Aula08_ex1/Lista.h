@@ -19,7 +19,7 @@ public:
     Conteudo** getConteudos();
     int getQuantidade();
     int getDuracaoTotal();
-    int getVisualizacoesTotais();
+    int getVisualizacoes();
 };
 
 #endif

@@ -3,9 +3,11 @@
 Conteudo::Conteudo(string legenda) : Postagem(legenda) {
 }
 
-Conteudo::~Conteudo() {
+Conteudo::Conteudo(string legenda)
+    : Postagem(legenda),
+      visualizacoes(0)
+{
 }
-
 int Conteudo::getVisualizacoes() {
     return visualizacoes;
 }
