@@ -20,6 +20,10 @@ Perfil::Perfil(std::string nome, int maximo) {
     this->postagens = new Postagem*[maximo];
 }
 
+Perfil::Perfil(string nome, Postagem** postagens, int quantidade) : nome(nome), quantidade(quantidade) {
+    this->postagens = postagens;
+}
+
 // Implementação do Destrutor
 Perfil::~Perfil() {
   cout << "Destrutor de perfil: " << getNome() << " - " << getQuantidade()  << " postagens" << endl;

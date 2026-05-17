@@ -27,6 +27,7 @@ public:
   
   // Construtor
   Perfil(string nome, int maximoDePostagens);
+  Perfil(string nome, Postagem** postagens, int quantidade);
   //Destrutor declarado como virtual para garantir a chamada correta em casos de herança
   virtual ~Perfil(); 
 };
