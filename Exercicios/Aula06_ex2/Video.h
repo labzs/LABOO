@@ -1,7 +1,7 @@
 #include "Postagem.h"
 
 #ifndef VIDEO_H
-#define ViDEO_H
+#define VIDEO_H
 
 //DECLARAÇÃO DA SUBCLASSE:
 //class NomeSubClasse: public NomeSuperClasse {}
