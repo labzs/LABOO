@@ -5,7 +5,8 @@
 Lista::Lista(string legenda, int nMaximoVideos)
     : Conteudo(legenda),
       nMaximoVideos(nMaximoVideos),
-      quantidadeVideos(0) 
+      quantidadeVideos(0),
+      nElementosIguais(0) 
     {
         this->conteudos = new Conteudo*[nMaximoVideos];
     }
@@ -33,7 +34,10 @@ bool Lista::adicionar(Conteudo* conteudo) {
     for (int i = 0; i < quantidadeVideos; i++)
     {
         if (conteudos[i] == video)
-        return false;
+        {
+            nElementosIguais++;
+            return false;
+        }
     }
     if(video ->getDuracao() < 0) {
         return false;
@@ -61,4 +65,55 @@ Lista::~Lista() {
     cout << "Lista com " << quantidadeVideos << " conteudos destruida" << endl;
     delete[] conteudos;
     cout << endl;
+}
+bool Lista::adicionar(Lista* lista) {
+
+    if (lista == nullptr)
+        return false;
+
+    int novosVideos = 0;
+
+    // Conta quantos realmente precisariam ser adicionados
+    for (int i = 0; i < lista->getQuantidade(); i++) {
+
+        Conteudo* conteudo = lista->conteudos[i];
+
+        Video* video = dynamic_cast<Video*>(conteudo);
+
+        if (video == nullptr)
+            continue;
+
+        bool jaExiste = false;
+
+        for (int j = 0; j < quantidadeVideos; j++) {
+            if (conteudos[j] == video) {
+                jaExiste = true;
+                break;
+            }
+        }
+
+        if (!jaExiste)
+            novosVideos++;
+    }
+
+    // Verifica espaço ANTES de adicionar qualquer um
+    if (quantidadeVideos + novosVideos > nMaximoVideos)
+        return false;
+
+    bool adicionou = false;
+
+    // Agora adiciona
+    for (int i = 0; i < lista->getQuantidade(); i++) {
+
+        Video* video =
+            dynamic_cast<Video*>(lista->conteudos[i]);
+
+        if (video == nullptr)
+            continue;
+
+        if (adicionar(video))
+            adicionou = true;
+    }
+
+    return adicionou;
 }
