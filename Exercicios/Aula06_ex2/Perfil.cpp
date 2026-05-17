@@ -29,6 +29,7 @@ Perfil::~Perfil() {
  }
 delete[] postagens;
  cout << "Perfil destruido:" << getNome() << endl;
+cout << endl;
 }
 
 int Perfil::getTotalDeVisualizacoes() {
@@ -68,6 +69,7 @@ void Perfil::imprimir() {
     // 1. Cabeçalho do Perfil
     cout << "Perfil: " << nome << " - " << getQuantidade() << " postagens - " 
          << getTotalDeVisualizacoes() << " visualizacoes totais" << endl;
+    cout << endl;
 
     // 2. Verificação de conteúdo
     for(int i = 0; i < maximoPostagens; i++) {

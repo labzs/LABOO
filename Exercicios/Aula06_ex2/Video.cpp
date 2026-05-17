@@ -11,6 +11,7 @@ Video::Video(string legenda, int duracao) : Postagem(legenda), duracao(duracao) 
 Video::~Video() {
     cout << "Destrutor de video com " << visualizacoes << " visualizacoes: "
          << legenda << endl;
+    cout << endl;
 }
 
 int Video::getDuracao() {

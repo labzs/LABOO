@@ -39,10 +39,12 @@ void Lista::imprimir() {
     for (int i = 0; i < quantidadeVideos; i++) {
         cout << "\t" << i+1 << ". ";
         videos[i]->imprimir();
+        cout << endl;
     }
 }
 
 Lista::~Lista() {
     cout << "Lista com " << quantidadeVideos << " videos destruida" << endl;
     delete[] videos;
+    cout << endl;
 }

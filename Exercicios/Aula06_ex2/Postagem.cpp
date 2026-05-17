@@ -11,6 +11,7 @@ Postagem::Postagem(string legenda) {
 Postagem::~Postagem() {
  cout << "Destrutor de postagem com " << getVisualizacoes() << " visualizacoes: "
  << getLegenda() << endl;
+ cout << endl;
 }
 
 void Postagem::assistir() {
@@ -19,6 +20,7 @@ void Postagem::assistir() {
 
 void Postagem::imprimir() {
     cout << "Postagem: " << legenda << " - " << getVisualizacoes() << " visualizacoes" << endl;
+    cout << endl;
 }
 
 string Postagem::getLegenda(){
