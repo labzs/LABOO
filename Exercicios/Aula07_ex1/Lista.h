@@ -12,7 +12,7 @@ protected:
   
 public:
     Lista(string legenda, int tamanho);
-    ~Lista();
+    virtual ~Lista();
     bool adicionar(Video* v);
     void imprimir();
     Video** getVideos();

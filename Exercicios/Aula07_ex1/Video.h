@@ -13,7 +13,7 @@ int duracao = 0;
 //MODO DE VISIBILIDADE
 public: 
  Video(string legenda, int duracao);
- ~Video();
+ virtual ~Video();
  int getDuracao();
  void assistir(int tempo);
 };
