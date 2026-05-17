@@ -30,13 +30,3 @@ void Video::assistir(int tempo) {
     }
 }
 
-Conteudo** Video::getConteudos() {
-    //Faz cast dinamico
-   Video* video = dynamic_cast<Video*>(this);
-   if (video == nullptr){
-    return nullptr;
-   }
-   else {
-    return 
-   }
-}

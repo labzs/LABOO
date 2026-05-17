@@ -1,4 +1,4 @@
-#include "Postagem.h"
+#include "Conteudo.h"
 
 #ifndef VIDEO_H
 #define VIDEO_H
@@ -6,7 +6,7 @@
 //DECLARAÇÃO DA SUBCLASSE:
 //class NomeSubClasse: public NomeSuperClasse {}
 
-class Video: public Postagem {
+class Video: public Conteudo {
 protected:
 int duracao = 0;
 

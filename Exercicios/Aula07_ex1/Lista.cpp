@@ -1,4 +1,5 @@
 #include "Lista.h"
+#include "Video.h"
 
 
 Lista::Lista(string legenda, int nMaximoVideos)
@@ -15,7 +16,7 @@ int Lista::getQuantidade() {
     return quantidadeVideos;
 }
 
-Conteudos** Lista::getConteudos() {
+Conteudo** Lista::getConteudos() {
     return conteudos;
 }
 
@@ -25,7 +26,8 @@ bool Lista::adicionar(Conteudo* conteudo) {
 
     Video* video = dynamic_cast<Video*>(conteudo);
     if (video == nullptr) {
-        // O conteúdo não é um vídeo, não pode ser adicionado
+        conteudos[quantidadeVideos] = conteudo;
+        quantidadeVideos++;
         return false;
     }
     for (int i = 0; i < quantidadeVideos; i++)
@@ -33,7 +35,7 @@ bool Lista::adicionar(Conteudo* conteudo) {
         if (conteudos[i] == video)
         return false;
     }
-    if(video->getDuracao() == 0) {
+    if(video ->getDuracao() < 0) {
         return false;
     }
     if (quantidadeVideos < nMaximoVideos) {
@@ -46,7 +48,7 @@ bool Lista::adicionar(Conteudo* conteudo) {
 }
 
 void Lista::imprimir() {
-    cout << "Lista com " << quantidadeVideos << " conteúdos: " << getLegenda() << endl;
+    cout << "Lista com " << quantidadeVideos << " conteudos: " << getLegenda() << endl;
 
     for (int i = 0; i < quantidadeVideos; i++) {
         cout << "\t" << i+1 << ". ";

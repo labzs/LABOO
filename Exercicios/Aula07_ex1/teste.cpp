@@ -10,43 +10,47 @@ using namespace std;
 
 void teste() {
 
-    // a. Crie um objeto Postagem com a legenda "instalacao antivirus"
-    //Postagem usando construtor
-    Postagem* postagem1 = new Postagem("instalacao antivirus");
+   //
+   // a. Crie 3 Conteudos, com legendas “c1” (assista 1 vez), “c2” (assista 2 vezes) e “c3” (assista 3 vezes) criados nessa mesma ordem;
+    Conteudo* c1 = new Conteudo("c1");
+    Conteudo* c2 = new Conteudo("c2");
+    Conteudo* c3 = new Conteudo("c3");
 
-    // b. Crie um objeto Video com a legenda "como instalar um antivirus" e duracao 120
-    Video* video1 = new Video("como instalar um antivirus", 120);
-
-    // c. Crie um objeto Video com a legenda "tutorial remover virus" e duracao 300
-    Video* video2 = new Video("tutorial remover virus", 300);
-
-    // d. Utilize 3 vezes o método assistir do Video "tutorial remover virus", com argumento 170
-    // Nota: 170/300 = 56.6%, logo cada chamada deve incrementar as visualizações.
+    for (int i = 0; i < 1; i++) {
+        c1->assistir();
+    }
+     for (int i = 0; i < 2; i++) {
+        c2->assistir();
+    }
     for (int i = 0; i < 3; i++) {
-        video2->assistir(170);
+        c3->assistir();
     }
 
-   //Exercicio 3
-   //a. Crie uma nova Lista chamada "videos mais vistos" e de tamanho 15. 
-    Lista* lista1 = new Lista("Videos mais vistos",15);
+   // b. Crie 1 Video, com legenda “v1” e duracao 5 (assista 4 vezes, com o argumento
 
-  // b. Adicione "como instalar um antivirus" e "tutorial remover virus" à lista;
-    lista1 ->adicionar(video1);
-    lista1 ->adicionar(video2);
+   Video* v1 = new Video("v1", 5);
+    for (int i = 0; i < 4; i++) {
+          v1->assistir(4); 
+     }
 
- //c. Crie o Perfil "tutoriais epicos", com máximo de postagens 10, e poste a Lista nele
-    Perfil* perfil1 = new Perfil("tutoriais epicos",10);
-    perfil1->postar(lista1);
+    //c. Crie 1 Lista, de legenda “l1” e com tamanho 5.
+        Lista* l1 = new Lista("l1", 5);
+    
+    //d. Adicione os Conteudos (incluindo o Video) à Lista, na ordem em que foram criados;
+        l1->adicionar(c1);
+        l1->adicionar(c2);
+        l1->adicionar(c3);
+        l1->adicionar(v1);
 
- //d. Imprima a Lista e o Perfil; 
-    lista1->imprimir();
-    perfil1->imprimir();
+// e. Imprima a Lista;
+     l1->imprimir();
+//f. Delete os Conteudos, o Video e, por fim, a Lista.
+     delete c1;
+     delete c2;
+     delete c3;
+     delete v1;
+     delete l1;
 
-//Destrua o Perfil", instalacao antivirus", "como instalar um virus" e "tutorial remover virus"; 
-    delete perfil1;
-    delete postagem1;
-    delete video1;
-    delete video2;
 };
 
 
