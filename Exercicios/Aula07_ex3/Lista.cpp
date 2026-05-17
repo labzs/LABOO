@@ -5,11 +5,10 @@
 Lista::Lista(string legenda, int nMaximoVideos)
     : Conteudo(legenda),
       nMaximoVideos(nMaximoVideos),
-      quantidadeVideos(0),
+      quantidadeVideos(0)
     {
         this->conteudos = new Conteudo*[nMaximoVideos];
-    }
-
+}
 
 
 int Lista::getQuantidade() {
@@ -118,11 +117,11 @@ bool Lista::adicionar(Lista* lista) {
 
 int Lista::getDuracaoTotal() {
     //Conteudo** conteudos = getConteudos(); //Cria um vetor de conteudos que recebe a lista de videos
-    Video** videos = dynamic_cast<Conteudo*>(conteudos);
 
     int duracaoTotal = 0;
-    for (int i =0; i < quantidadeVideos < i++) {
-        int duracaoVideo = videos[i]->getDuracao();
+    for (int i = 0; i < quantidadeVideos; i++) {
+        Video* video = dynamic_cast<Video*>(conteudos[i]);
+        int duracaoVideo = video->getDuracao();
         duracaoTotal += duracaoVideo;
     }
     return duracaoTotal;
