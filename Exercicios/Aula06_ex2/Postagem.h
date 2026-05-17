@@ -19,7 +19,7 @@ public:
  
 // Construtor
  Postagem(string legenda);
- ~Postagem();
+ virtual ~Postagem();
   
 };
 
