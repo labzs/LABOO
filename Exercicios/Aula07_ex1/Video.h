@@ -6,7 +6,7 @@
 //DECLARAÇÃO DA SUBCLASSE:
 //class NomeSubClasse: public NomeSuperClasse {}
 
-class Video: public Conteudo {
+class Video: public Postagem {
 protected:
 int duracao = 0;
 
