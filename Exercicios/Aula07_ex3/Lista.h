@@ -18,7 +18,7 @@ public:
     void imprimir();
     Conteudo** getConteudos();
     int getQuantidade();
-
+    int getDuracaoTotal();
 };
 
 #endif
