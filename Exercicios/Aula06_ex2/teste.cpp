@@ -1,6 +1,7 @@
 #include "Perfil.h"
 #include "Postagem.h"
 #include "Video.h"
+#include "Lista.h"
 #include <string>
 #include <iostream>
 
@@ -25,22 +26,17 @@ void teste() {
         video2->assistir(170);
     }
 
-    // e. Poste todos os objetos criados em um novo Perfil, de nome "tutoriais epicos" e maximo 10
    
-    Perfil* perfil = new Perfil("tutoriais epicos", 10);
-    perfil->postar(postagem1);
-    perfil->postar(video1);
-    perfil->postar(video2);
+    Lista* lista1 = new Lista("Videos mais vistos",15);
+    lista1 ->adicionar(video1);
+    lista1 ->adicionar(video2);
 
-    // f. Imprima “tutoriais epicos” e a duração de "tutorial remover virus", pulando uma linha
-  perfil -> imprimir();
-  cout << "Duracao: " << video2 -> getDuracao() << endl;
-  cout << endl;
-  
- 
+    Perfil* perfil1 = new Perfil("tutoriais epicos",10);
+    perfil1->postar(lista1);
 
-    // g. Destrua o perfil
-    delete perfil;
+    lista1->imprimir();
+    perfil1->imprimir();
+    
 };
 
 
