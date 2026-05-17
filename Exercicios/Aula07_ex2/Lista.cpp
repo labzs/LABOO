@@ -35,7 +35,6 @@ bool Lista::adicionar(Conteudo* conteudo) {
     {
         if (conteudos[i] == video)
         {
-            nElementosIguais++;
             return false;
         }
     }
