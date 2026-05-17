@@ -2,7 +2,7 @@
 
 
 Lista::Lista(string legenda, int nMaximoVideos)
-    : Postagem(legenda),
+    : Conteudo(legenda),
       nMaximoVideos(nMaximoVideos),
       quantidadeVideos(0) 
 {
@@ -19,14 +19,26 @@ Video** Lista::getVideos() {
     return videos;
 }
 
-bool Lista::adicionar(Video* video) {
+bool Lista::adicionar(Conteudo* conteudo) {
+
+    // Verifica se o conteúdo é um vídeo usando dynamic_cast
+
+    Video* video = dynamic_cast<Video*>(conteudo);
+    if (video == nullptr) {
+        // O conteúdo não é um vídeo, não pode ser adicionado
+        return false;
+    }
     for (int i = 0; i < quantidadeVideos; i++)
     {
         if (videos[i] == video)
         return false;
     }
-    if (quantidadeVideos <= nMaximoVideos) {
+    if(video ->getDuracao() < 0) {
+        return false;
+    }
+    if (quantidadeVideos < nMaximoVideos) {
         videos[quantidadeVideos] = video;
+        quantidadeVideos++;
         return true;
     }
     else

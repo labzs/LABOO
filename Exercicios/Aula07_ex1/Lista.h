@@ -1,9 +1,9 @@
 #ifndef LISTA_H
 #define LISTA_H
-#include "Postagem.h"
+#include "Conteudo.h"
 #include "Video.h"
 
-class Lista: public Postagem {
+class Lista: public Conteudo {
 protected:
     int nMaximoVideos;
     int quantidadeVideos;
@@ -13,7 +13,7 @@ protected:
 public:
     Lista(string legenda, int tamanho);
     virtual ~Lista();
-    bool adicionar(Video* v);
+    bool adicionar(Conteudo* v);
     void imprimir();
     Video** getVideos();
     int getQuantidade();
