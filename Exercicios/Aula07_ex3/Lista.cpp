@@ -121,8 +121,10 @@ int Lista::getDuracaoTotal() {
     int duracaoTotal = 0;
     for (int i = 0; i < quantidadeVideos; i++) {
         Video* video = dynamic_cast<Video*>(conteudos[i]);
-        int duracaoVideo = video->getDuracao();
-        duracaoTotal += duracaoVideo;
+        if (video != nullptr) {
+            int duracaoVideo = video->getDuracao();
+            duracaoTotal += duracaoVideo;
+        }
     }
     return duracaoTotal;
 
