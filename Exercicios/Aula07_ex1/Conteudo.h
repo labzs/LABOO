@@ -7,7 +7,7 @@ class Conteudo: public Postagem {
 public:
     Conteudo(string legenda);
     virtual ~Conteudo();
-
+    Conteudo** conteudos;
 };
 
 #endif
