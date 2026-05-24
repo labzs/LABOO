@@ -15,7 +15,7 @@ public:
     bool adicionar(Lista* lista);
     virtual ~Lista();
     bool adicionar(Conteudo* conteudo);
-    void imprimir();
+    void imprimir() override;
     Conteudo** getConteudos();
     int getQuantidade();
     int getDuracaoTotal();

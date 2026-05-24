@@ -16,7 +16,7 @@ public:
   void setLegenda(string leg);
   virtual int getVisualizacoes() = 0;
   virtual void imprimir () = 0;
-  void assistir ();   
+  virtual void assistir() = 0;
   
  
 // Construtor

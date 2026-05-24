@@ -12,7 +12,7 @@ public:
     Conteudo** conteudos;
 
     int getVisualizacoes();
-    virtual void assistir () = 0;    
+    virtual void assistir();    
 };
 
 #endif

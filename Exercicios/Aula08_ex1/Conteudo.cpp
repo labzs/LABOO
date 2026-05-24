@@ -1,12 +1,15 @@
 #include "Conteudo.h"
 
-Conteudo::Conteudo(string legenda) : Postagem(legenda) {
-}
-
 Conteudo::Conteudo(string legenda)
     : Postagem(legenda),
       visualizacoes(0)
 {
+}
+
+Conteudo::~Conteudo() {
+    cout << "Destrutor de conteudo com " << visualizacoes << " visualizacoes: "
+         << legenda << endl;
+    cout << endl;
 }
 int Conteudo::getVisualizacoes() {
     return visualizacoes;

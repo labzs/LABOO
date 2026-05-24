@@ -26,7 +26,7 @@ void Video::assistir(int tempo) {
     // Se assistiu 50% ou mais (0.5), incrementa visualização
     if (porcentagemAssistida >= 0.5) {
         //chama o método assistir() da classe pai
-        Postagem::assistir(); 
+        Conteudo::assistir(); 
     }
 }
 
