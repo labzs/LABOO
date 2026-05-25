@@ -1,6 +1,7 @@
 #include "Video.h"
 #include "Conteudo.h"
 
+double Video::percentualReferencia = 0.5;
 
 // a. Construtor chamando o construtor da base (Postagem)
 Video::Video(string legenda, int duracao) : Conteudo(legenda), duracao(duracao) {
@@ -32,4 +33,11 @@ void Video::assistir(int tempo) {
 
 void Video::imprimir() {
     cout << "Video: " << getLegenda() << " (" << duracao << " segundos, " << visualizacoes << " visualizacoes)";
+}
+
+void Video::setPorcentagem(double valor) {
+    percentualReferencia = valor;
+}
+double Video::getPorcentagem() {
+    return percentualReferencia;
 }
