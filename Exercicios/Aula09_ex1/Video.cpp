@@ -5,7 +5,7 @@ double Video::percentualReferencia = 0.5;
 
 // a. Construtor chamando o construtor da base (Postagem)
 Video::Video(string legenda, int duracao) : Conteudo(legenda), duracao(duracao) {
-    if (duracao <= 0) throw new invalid_argument("duracao invalida")
+    if (duracao <= 0) throw new invalid_argument("duracao invalida");
 }
 
 

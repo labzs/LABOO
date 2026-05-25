@@ -122,20 +122,17 @@ int Lista::getDuracao() {
 
     for (int i = 0; i < quantidadeVideos; i++) {
         Video* video = dynamic_cast<Video*>(conteudos[i]);
-
-        if (video == nullptr) {
-           temVideo *= temVideo;
-        }
         if (video != nullptr) {
             int duracaoVideo = video->getDuracao();
             duracaoTotal += duracaoVideo;
-        }
-        
+            temVideo = 1;
+        }   
+    }
+    if (temVideo ==  0) {
+        throw new logic_error("lista sem videos");
     }
     return duracaoTotal;
-    if (temVideo ==  0) {
-        throw new logic_error("lista sem videos")
-    }
+    
 }
     
 
@@ -149,7 +146,7 @@ int Lista::getVisualizacoes() {
         total += conteudos[i]->getVisualizacoes();
 
     }
-    if(total == 0) {
+    if(quantidadeVideos == 0) {
         throw new logic_error("Lista vazia");
     }
  
