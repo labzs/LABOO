@@ -12,10 +12,15 @@ int duracao = 0;
 
 //MODO DE VISIBILIDADE
 public: 
- Video(string legenda, int duracao);
- ~Video();
- int getDuracao();
- void assistir(int tempo);
+    Video(string legenda, int duracao);
+    ~Video();
+    int getDuracao();
+    void assistir(int tempo);
+    static void setPorcentagem(double valor);
+    static double getPorcentagem();
+
+    private:
+    static double percentAssistido;
 };
 
 #endif

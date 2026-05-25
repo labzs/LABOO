@@ -1,6 +1,6 @@
 #include "Video.h"
 
-
+double Video::percentAssistido = 0.5;
 
 // a. Construtor chamando o construtor da base (Postagem)
 Video::Video(string legenda, int duracao) : Postagem(legenda), duracao(duracao) {
@@ -23,9 +23,15 @@ void Video::assistir(int tempo) {
     // Calcula a porcentagem usando cast para double para não perder precisão
     double porcentagemAssistida = (double)tempo / duracao;
 
-    // Se assistiu 50% ou mais (0.5), incrementa visualização
-    if (porcentagemAssistida >= 0.5) {
+    if (porcentagemAssistida >= percentAssistido) {
         //chama o método assistir() da classe pai
         Postagem::assistir(); 
     }
 }
+
+ void Video::setPorcentagem(double valor){
+    percentAssistido = valor;
+ }
+ double Video::getPorcentagem() {
+    return percentAssistido;
+ }
